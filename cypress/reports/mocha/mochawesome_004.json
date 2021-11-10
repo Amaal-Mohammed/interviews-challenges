@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 1,
+    "pending": 0,
+    "failures": 4,
+    "start": "2021-11-09T15:11:17.732Z",
+    "end": "2021-11-09T15:13:29.016Z",
+    "duration": 131284,
+    "testsRegistered": 5,
+    "passPercent": 20,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2dbed632-16ca-4b63-9d78-4d263c8a758b",
+      "title": "",
+      "fullFile": "cypress/integration/register/register.spec.js",
+      "file": "cypress/integration/register/register.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "68e45e40-8226-4a7f-982f-2b51c6bd9c57",
+          "title": "Actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User is able to register when adding all mandatory fields",
+              "fullTitle": "Actions Verify User is able to register when adding all mandatory fields",
+              "timedOut": null,
+              "duration": 41924,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\register\\\\register.spec.js\\\\Actions -- Verify User is able to register when adding all mandatory fields (failed).png\"\n        }\n      ]\n    ]\n  },\n  \"assets/register/register.spec.js/Actions -- Verify User is able to register when adding all mandatory fields (failed).png\"\n]",
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.insertCustomerFirstName(firstname);\n_registeraccount.default.insertCustomerLastName(lastname);\n_registeraccount.default.insertCustometPassword(faker.internet.password());\n_registeraccount.default.selectDayMonthYear(_helpers.default.generateRandomDay, faker.date.month(), _helpers.default.generateRandomYear);\n_registeraccount.default.insertFirstName(firstname);\n_registeraccount.default.insertLastName(lastname);\n_registeraccount.default.insertAddress1(faker.address.streetName());\n_registeraccount.default.insertCity(faker.address.city());\n_registeraccount.default.insertState(faker.address.state());\n_registeraccount.default.insertZipCode(_helpers.default.zipcode);\n_registeraccount.default.insertMobilePhone(_helpers.default.generateRandomMobileNum);\n_registeraccount.default.insertAlias(firstname);\n_registeraccount.default.clickSubmitAccount();\n_myaccount.default.verifyUserisRegistered(firstname, lastname);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[id=customer_firstname]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[id=customer_firstname]`, but never found it.\n    at Object.insertCustomerFirstName (http://automationpractice.com/__cypress/tests?p=cypress\\integration\\register\\register.spec.js:339:8)\n    at Context.eval (http://automationpractice.com/__cypress/tests?p=cypress\\integration\\register\\register.spec.js:133:30)",
+                "diff": null
+              },
+              "uuid": "2ebd1250-3af3-4555-a304-0aac562d16b6",
+              "parentUUID": "68e45e40-8226-4a7f-982f-2b51c6bd9c57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User is not able to register when non of mandatory fields are added",
+              "fullTitle": "Actions Verify User is not able to register when non of mandatory fields are added",
+              "timedOut": null,
+              "duration": 14970,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\register\\\\register.spec.js\\\\Actions -- Verify User is not able to register when non of mandatory fields are added (failed).png\"\n        }\n      ]\n    ]\n  },\n  \"assets/register/register.spec.js/Actions -- Verify User is not able to register when non of mandatory fields are added (failed).png\"\n]",
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.clickSubmitAccount();\n_registeraccount.default.verifyValidationMsgIsDisplayed();",
+              "err": {
+                "message": "TypeError: _registeraccount.default.verifyValidationMsgIsDisplayed is not a function",
+                "estack": "TypeError: _registeraccount.default.verifyValidationMsgIsDisplayed is not a function\n    at Context.eval (http://automationpractice.com/__cypress/tests?p=cypress\\integration\\register\\register.spec.js:173:30)",
+                "diff": null
+              },
+              "uuid": "4bd26c12-547d-4596-b138-34ae78ab5c18",
+              "parentUUID": "68e45e40-8226-4a7f-982f-2b51c6bd9c57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User is not able to register when an password less than 5 characters",
+              "fullTitle": "Actions Verify User is not able to register when an password less than 5 characters",
+              "timedOut": null,
+              "duration": 14113,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\register\\\\register.spec.js\\\\Actions -- Verify User is not able to register when an password less than 5 characters (failed).png\"\n        }\n      ]\n    ]\n  },\n  \"assets/register/register.spec.js/Actions -- Verify User is not able to register when an password less than 5 characters (failed).png\"\n]",
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.insertCustomerFirstName(firstname);\n_registeraccount.default.insertCustomerLastName(lastname);\ncy.fixture(\"register.json\", \"binary\").then(data => {\n  _registeraccount.default.insertCustometPassword(data.invalidpassword);\n});\n_registeraccount.default.selectDayMonthYear(_helpers.default.generateRandomDay, faker.date.month(), _helpers.default.generateRandomYear);\n_registeraccount.default.insertFirstName(firstname);\n_registeraccount.default.insertLastName(lastname);\n_registeraccount.default.insertAddress1(faker.address.streetName());\n_registeraccount.default.insertCity(faker.address.city());\n_registeraccount.default.insertState(faker.address.state());\n_registeraccount.default.insertZipCode(_helpers.default.zipcode);\n_registeraccount.default.insertMobilePhone(_helpers.default.generateRandomMobileNum);\n_registeraccount.default.insertAlias(firstname);\n_registeraccount.default.clickSubmitAccount();\n_registeraccount.default.verifyPasswordValidationMsgIsDisplayed();",
+              "err": {
+                "message": "TypeError: _registeraccount.default.verifyPasswordValidationMsgIsDisplayed is not a function",
+                "estack": "TypeError: _registeraccount.default.verifyPasswordValidationMsgIsDisplayed is not a function\n    at Context.eval (http://automationpractice.com/__cypress/tests?p=cypress\\integration\\register\\register.spec.js:213:30)",
+                "diff": null
+              },
+              "uuid": "b03373e7-54cb-443b-ad56-17134d8a803e",
+              "parentUUID": "68e45e40-8226-4a7f-982f-2b51c6bd9c57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User is not able to register when phone is invalid format",
+              "fullTitle": "Actions Verify User is not able to register when phone is invalid format",
+              "timedOut": null,
+              "duration": 32749,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\register\\\\register.spec.js\\\\Actions -- Verify User is not able to register when phone is invalid format (failed).png\"\n        }\n      ]\n    ]\n  },\n  \"assets/register/register.spec.js/Actions -- Verify User is not able to register when phone is invalid format (failed).png\"\n]",
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.insertCustomerFirstName(firstname);\n_registeraccount.default.insertCustomerLastName(lastname);\n_registeraccount.default.insertCustometPassword(faker.internet.password);\n_registeraccount.default.selectDayMonthYear(_helpers.default.generateRandomDay, faker.date.month(), _helpers.default.generateRandomYear);\n_registeraccount.default.insertFirstName(firstname);\n_registeraccount.default.insertLastName(lastname);\n_registeraccount.default.insertAddress1(faker.address.streetName());\n_registeraccount.default.insertCity(faker.address.city());\n_registeraccount.default.insertState(faker.address.state());\n_registeraccount.default.insertZipCode(_helpers.default.zipcode);\ncy.fixture(\"register.json\", \"binary\").then(data => {\n  _registeraccount.default.insertMobilePhone(data.invalidmobilephone);\n}); //Register.insertMobilePhone()\n_registeraccount.default.insertAlias(firstname);\n_registeraccount.default.clickSubmitAccount(); //Register.",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[id=customer_firstname]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[id=customer_firstname]`, but never found it.\n    at Object.insertCustomerFirstName (http://automationpractice.com/__cypress/tests?p=cypress\\integration\\register\\register.spec.js:339:8)\n    at Context.eval (http://automationpractice.com/__cypress/tests?p=cypress\\integration\\register\\register.spec.js:225:30)",
+                "diff": null
+              },
+              "uuid": "0239369e-43e6-404d-97d3-771766ed9ac3",
+              "parentUUID": "68e45e40-8226-4a7f-982f-2b51c6bd9c57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User is not able to register when zipcode is invalid format",
+              "fullTitle": "Actions Verify User is not able to register when zipcode is invalid format",
+              "timedOut": null,
+              "duration": 27198,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();",
+              "err": {},
+              "uuid": "895939cb-c0fe-4dc8-bf1f-5ab4d627dd3e",
+              "parentUUID": "68e45e40-8226-4a7f-982f-2b51c6bd9c57",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "895939cb-c0fe-4dc8-bf1f-5ab4d627dd3e"
+          ],
+          "failures": [
+            "2ebd1250-3af3-4555-a304-0aac562d16b6",
+            "4bd26c12-547d-4596-b138-34ae78ab5c18",
+            "b03373e7-54cb-443b-ad56-17134d8a803e",
+            "0239369e-43e6-404d-97d3-771766ed9ac3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 130954,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-10T00:56:41.003Z",
+    "end": "2021-11-10T00:58:36.100Z",
+    "duration": 115097,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c451bcdf-7ec9-4741-bf8b-2c4ce59150df",
+      "title": "",
+      "fullFile": "cypress/integration/register/register.spec.js",
+      "file": "cypress/integration/register/register.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e174dee7-7ce7-4f35-9f6a-2fbdce9059fb",
+          "title": "Actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User is able to register when adding all mandatory fields",
+              "fullTitle": "Actions Verify User is able to register when adding all mandatory fields",
+              "timedOut": null,
+              "duration": 30214,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.insertCustomerFirstName(firstname);\n_registeraccount.default.insertCustomerLastName(lastname);\n_registeraccount.default.insertCustometPassword(faker.internet.password());\n_registeraccount.default.selectDayMonthYear(_helpers.default.generateRandomDay, faker.date.month(), _helpers.default.generateRandomYear);\n_registeraccount.default.insertFirstName(firstname);\n_registeraccount.default.insertLastName(lastname);\n_registeraccount.default.insertAddress1(faker.address.streetName());\n_registeraccount.default.insertCity(faker.address.city());\n_registeraccount.default.insertState(faker.address.state());\n_registeraccount.default.insertZipCode(_helpers.default.zipcode);\n_registeraccount.default.insertMobilePhone(_helpers.default.generateRandomMobileNum);\n_registeraccount.default.insertAlias(firstname);\n_registeraccount.default.clickSubmitAccount();\n_myaccount.default.verifyUserisRegistered(firstname, lastname);",
+              "err": {},
+              "uuid": "d20dd2d6-ac39-46ea-b549-21a100a6bfba",
+              "parentUUID": "e174dee7-7ce7-4f35-9f6a-2fbdce9059fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User is not able to register when non of mandatory fields are added",
+              "fullTitle": "Actions Verify User is not able to register when non of mandatory fields are added",
+              "timedOut": null,
+              "duration": 14123,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.clickSubmitAccount();\n_registeraccount.default.verifyValidationMsgIsDisplayed();",
+              "err": {},
+              "uuid": "c3b40170-1060-4b54-bba9-59609d265ca9",
+              "parentUUID": "e174dee7-7ce7-4f35-9f6a-2fbdce9059fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User is not able to register when an password less than 5 characters",
+              "fullTitle": "Actions Verify User is not able to register when an password less than 5 characters",
+              "timedOut": null,
+              "duration": 21643,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.insertCustomerFirstName(firstname);\n_registeraccount.default.insertCustomerLastName(lastname);\ncy.fixture(\"register.json\", \"binary\").then(data => {\n  _registeraccount.default.insertCustometPassword(data.invalidpassword);\n});\n_registeraccount.default.selectDayMonthYear(_helpers.default.generateRandomDay, faker.date.month(), _helpers.default.generateRandomYear);\n_registeraccount.default.insertFirstName(firstname);\n_registeraccount.default.insertLastName(lastname);\n_registeraccount.default.insertAddress1(faker.address.streetName());\n_registeraccount.default.insertCity(faker.address.city());\n_registeraccount.default.insertState(faker.address.state());\n_registeraccount.default.insertZipCode(_helpers.default.zipcode);\n_registeraccount.default.insertMobilePhone(_helpers.default.generateRandomMobileNum);\n_registeraccount.default.insertAlias(firstname);\n_registeraccount.default.clickSubmitAccount();\n_registeraccount.default.verifyPasswordValidationMsgIsDisplayed();",
+              "err": {},
+              "uuid": "ccfab821-c9df-48eb-91ec-d2810c902086",
+              "parentUUID": "e174dee7-7ce7-4f35-9f6a-2fbdce9059fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User is not able to register when phone is invalid format",
+              "fullTitle": "Actions Verify User is not able to register when phone is invalid format",
+              "timedOut": null,
+              "duration": 19891,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.insertCustomerFirstName(firstname);\n_registeraccount.default.insertCustomerLastName(lastname);\n_registeraccount.default.insertCustometPassword(faker.internet.password());\n_registeraccount.default.selectDayMonthYear(_helpers.default.generateRandomDay, faker.date.month(), _helpers.default.generateRandomYear);\n_registeraccount.default.insertFirstName(firstname);\n_registeraccount.default.insertLastName(lastname);\n_registeraccount.default.insertAddress1(faker.address.streetName());\n_registeraccount.default.insertCity(faker.address.city());\n_registeraccount.default.insertState(faker.address.state());\n_registeraccount.default.insertZipCode(_helpers.default.zipcode);\ncy.fixture(\"register.json\", \"binary\").then(data => {\n  _registeraccount.default.insertMobilePhone(data.invalidmobilephone);\n});\n_registeraccount.default.insertAlias(firstname);\n_registeraccount.default.clickSubmitAccount();\n_registeraccount.default.verifyMobileValidationMsgIsDisplayed();",
+              "err": {},
+              "uuid": "b74e3b7a-6b01-45bb-861d-7ddf0d3a9c1d",
+              "parentUUID": "e174dee7-7ce7-4f35-9f6a-2fbdce9059fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User is not able to register when zipcode is invalid format",
+              "fullTitle": "Actions Verify User is not able to register when zipcode is invalid format",
+              "timedOut": null,
+              "duration": 20220,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\n_signin.default.createEmailToRegister(faker.internet.email());\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.insertCustomerFirstName(firstname);\n_registeraccount.default.insertCustomerLastName(lastname);\n_registeraccount.default.insertCustometPassword(faker.internet.password());\n_registeraccount.default.selectDayMonthYear(_helpers.default.generateRandomDay, faker.date.month(), _helpers.default.generateRandomYear);\n_registeraccount.default.insertFirstName(firstname);\n_registeraccount.default.insertLastName(lastname);\n_registeraccount.default.insertAddress1(faker.address.streetName());\n_registeraccount.default.insertCity(faker.address.city());\n_registeraccount.default.insertState(faker.address.state());\ncy.fixture(\"register.json\", \"binary\").then(data => {\n  _registeraccount.default.insertZipCode(data.invalidzipcode);\n});\n_registeraccount.default.insertMobilePhone(_helpers.default.generateRandomMobileNum);\n_registeraccount.default.insertAlias(firstname);\n_registeraccount.default.clickSubmitAccount();\n_registeraccount.default.verifyZipCodeValidationMsgIsDisplayed();",
+              "err": {},
+              "uuid": "c7cae3d4-1866-4bdd-aa51-5572d434df63",
+              "parentUUID": "e174dee7-7ce7-4f35-9f6a-2fbdce9059fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User is not able to register with same email twice",
+              "fullTitle": "Actions Verify User is not able to register with same email twice",
+              "timedOut": null,
+              "duration": 8381,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "firstname = faker.name.firstName();\nlastname = faker.name.lastName();\n_home.default.clickSignInBtn();\ncy.fixture(\"register.json\", \"binary\").then(data => {\n  _signin.default.createEmailToRegister(data.registeredemail);\n});\n_signin.default.clickCreateAccountBtn();\n_registeraccount.default.verifyDuplicateAccountRegisteration();",
+              "err": {},
+              "uuid": "3cc5ba69-58fe-4731-8882-757e054197fc",
+              "parentUUID": "e174dee7-7ce7-4f35-9f6a-2fbdce9059fb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d20dd2d6-ac39-46ea-b549-21a100a6bfba",
+            "c3b40170-1060-4b54-bba9-59609d265ca9",
+            "ccfab821-c9df-48eb-91ec-d2810c902086",
+            "b74e3b7a-6b01-45bb-861d-7ddf0d3a9c1d",
+            "c7cae3d4-1866-4bdd-aa51-5572d434df63",
+            "3cc5ba69-58fe-4731-8882-757e054197fc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 114472,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
