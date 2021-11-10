@@ -67,7 +67,15 @@ export default {
         cy.get('ol').invoke('text').should('contain', Verifications.invalidmobilenumvalidationmsg)
     },
     verifyDuplicateAccountRegisteration() {
-        cy.contains(Verifications.duplicateaccountvalidationmsg)
+        cy.contains(Verifications.duplicateaccountvalidationmsg).should('be.visible')
+    },
+    verifyInvalidEmailAddress() {
+        cy.contains(Verifications.invalidemailmsg).should('be.visible')
+    },
+    verifyDescriptiveLabelsISDisplayed() {
+        cy.contains(Verifications.addresslabel).should('be.visible')
+        cy.contains(Verifications.phonelabel).should('be.visible')
+        cy.contains(Verifications.passwordlabel).should('be.visible')
     }
 
 

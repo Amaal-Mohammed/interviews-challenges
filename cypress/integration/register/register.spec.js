@@ -6,7 +6,7 @@ import SignIn from '../../pages/signin'
 
 const { fake } = require('faker');
 const faker = require("faker");
-context('Actions', () => {
+context('Register Tests', () => {
   let firstname = ""
   let lastname = ""
   beforeEach(() => {
@@ -127,8 +127,7 @@ context('Actions', () => {
   })
 
   it('Verify User is not able to register with same email twice', () => {
-    firstname = faker.name.firstName()
-    lastname = faker.name.lastName()
+
     Home.clickSignInBtn()
     cy.fixture("register.json", "binary").then(data => {
       SignIn.createEmailToRegister(data.registeredemail)
@@ -136,6 +135,29 @@ context('Actions', () => {
 
     SignIn.clickCreateAccountBtn()
     Register.verifyDuplicateAccountRegisteration()
+
+  })
+
+  it('Verify User is not able to register with invalid email ', () => {
+
+    Home.clickSignInBtn()
+    cy.fixture("register.json", "binary").then(data => {
+      SignIn.createEmailToRegister(data.invalidemail)
+    })
+
+    SignIn.clickCreateAccountBtn()
+    Register.verifyInvalidEmailAddress()
+
+  })
+
+  it('Verify illustrative labels are displayed in the Registeration page ', () => {
+    firstname = faker.name.firstName()
+    lastname = faker.name.lastName()
+    Home.clickSignInBtn()
+    SignIn.createEmailToRegister(faker.internet.email())
+
+    SignIn.clickCreateAccountBtn()
+    Register.verifyDescriptiveLabelsISDisplayed()
 
   })
 
